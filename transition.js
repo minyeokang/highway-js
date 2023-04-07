@@ -3,16 +3,21 @@ import { gsap } from "gsap";
 
 
 class Fade extends Highway.Transition {
-    // Built-in methods
     in({ from, to, trigger, done }) {
         gsap.fromTo(to, {left: '-100%'},{left: '0', onComplete: function(){
+          from.remove()
           done()
         }})
+      
+        
     }
   
     out({ from, trigger, done }) {
-      done()
+      gsap.to(from, {left: '-100%', onComplete: function(){
+        done()
+      }})
     }
 }
-// Don`t forget to export your renderer
-export default Fade;
+
+
+export default Fade

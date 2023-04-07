@@ -563,15 +563,20 @@ var _highwayDefault = parcelHelpers.interopDefault(_highway);
 // Import Transitions
 var _transition = require("./transition");
 var _transitionDefault = parcelHelpers.interopDefault(_transition);
+var _renderer = require("./renderer");
+var _rendererDefault = parcelHelpers.interopDefault(_renderer);
 // Call Highway.Core once.
 // Relate transitions to pages with the label of the `data-router-view`.
 const H = new (0, _highwayDefault.default).Core({
     transitions: {
         default: (0, _transitionDefault.default)
+    },
+    renderers: {
+        about: (0, _rendererDefault.default)
     }
 });
 
-},{"@dogstudio/highway":"26LRT","@parcel/transformer-js/src/esmodule-helpers.js":"25ynl","./transition":"5vJBU"}],"26LRT":[function(require,module,exports) {
+},{"@dogstudio/highway":"26LRT","@parcel/transformer-js/src/esmodule-helpers.js":"25ynl","./transition":"5vJBU","./renderer":"jYTwh"}],"26LRT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 function t() {}
@@ -884,22 +889,26 @@ var _highway = require("@dogstudio/highway");
 var _highwayDefault = parcelHelpers.interopDefault(_highway);
 var _gsap = require("gsap");
 class Fade extends (0, _highwayDefault.default).Transition {
-    // Built-in methods
     in({ from , to , trigger , done  }) {
         (0, _gsap.gsap).fromTo(to, {
             left: "-100%"
         }, {
             left: "0",
             onComplete: function() {
+                from.remove();
                 done();
             }
         });
     }
     out({ from , trigger , done  }) {
-        done();
+        (0, _gsap.gsap).to(from, {
+            left: "-100%",
+            onComplete: function() {
+                done();
+            }
+        });
     }
 }
-// Don`t forget to export your renderer
 exports.default = Fade;
 
 },{"@dogstudio/highway":"26LRT","gsap":"fPSuC","@parcel/transformer-js/src/esmodule-helpers.js":"25ynl"}],"fPSuC":[function(require,module,exports) {
@@ -4886,6 +4895,20 @@ var CSSPlugin = {
 });
 (0, _gsapCoreJs.gsap).registerPlugin(CSSPlugin);
 
-},{"./gsap-core.js":"05eeC","@parcel/transformer-js/src/esmodule-helpers.js":"25ynl"}]},["c9nxw","adjPd"], "adjPd", "parcelRequirec02a")
+},{"./gsap-core.js":"05eeC","@parcel/transformer-js/src/esmodule-helpers.js":"25ynl"}],"jYTwh":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _highway = require("@dogstudio/highway");
+var _highwayDefault = parcelHelpers.interopDefault(_highway);
+var _gsap = require("gsap");
+class CustomRenderer extends (0, _highwayDefault.default).Renderer {
+    // Hooks/methods
+    onLeave() {
+        console.log("hello");
+    }
+}
+exports.default = CustomRenderer;
+
+},{"@dogstudio/highway":"26LRT","gsap":"fPSuC","@parcel/transformer-js/src/esmodule-helpers.js":"25ynl"}]},["c9nxw","adjPd"], "adjPd", "parcelRequirec02a")
 
 //# sourceMappingURL=index.63aff760.js.map
