@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 6.25%;
+}
+
+body {
+  color: #ddd;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, #000 0% 51%, #1d1d1d 100%);
+  font-size: 16rem;
+  overflow: hidden;
+}
+
+ol, li {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+nav {
+  height: 50rem;
+  width: 100%;
+  z-index: 10;
+  background: #fff;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10rem;
+  padding: 10rem;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+section {
+  position: absolute;
+  left: 0;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.about {
+  background: #666;
+}
+
+/*# sourceMappingURL=index.3a01df49.css.map */

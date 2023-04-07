@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@dogstudio/highway": "^2.2.1",
+    "gsap": "^3.11.5"
+  },
+  "name": "highway",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minyeokang/highway-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minyeokang/highway-js/issues"
+  },
+  "homepage": "https://github.com/minyeokang/highway-js#readme",
+  "description": ""
+}

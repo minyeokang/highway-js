@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section><p>page transition 1</p></section>
-    <section><p>page transition 2</p></section>
-    <section><p>page transition 3</p></section>
-    <script src="main.js"></script>
+    <nav><a href="#">home</a><a href="about.html">about</a></nav>
+    <div class="wrapper" data-router-wrapper>
+        <section data-router-view="home"><p>home</p></section>
+    </div>
+    <script src="main.js" type="module" ></script>
   </body>
 </html>
